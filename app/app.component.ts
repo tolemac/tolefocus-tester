@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app',
-  template: `<h1>Hello {{name}}</h1>
+    selector: 'my-app',
+    template: `<h1>Hello {{name}}</h1>
 <div focus-group>
     <input value="1"/>
     <input autofocus="observe" *ngIf="show3"  value="2" [hidden]="!show2" /><button (click)="show2 = !show2">hide</button>
@@ -10,18 +10,16 @@ import { Component } from '@angular/core';
     <div focus-order>DIV</div>
     <input value="3"/>
     <a href="#">hola</a>
-    <div focus-group>
-        <div focus-group>
-            <select><option value="1">opcion</option></select>
-            <input value="1"/>
-            <input value="2"/>
-            <input value="3"/>
-        </div>
+    <div focus-group>        
+        <select><option value="1">opcion</option></select>
+        <input value="1"/>
+        <input value="2"/>
+        <input value="3"/>        
     </div>
-    <input focus-order="17" *ngIf="show" value="1"/>
-    <input focus-order="18" *ngIf="show" value="2"/>
-    <button focus-order="20" (click)="show = !show">click</button>
-    <input focus-order="19" *ngIf="show" value="3"/>
+    <input *ngIf="show" value="1"/>
+    <input *ngIf="show" value="2"/>
+    <button (click)="show = !show">click</button>
+    <input *ngIf="show" value="3"/>
 </div>
 <div focus-group>
     <input value="4"/>
@@ -37,9 +35,9 @@ import { Component } from '@angular/core';
 </div>
   `,
 })
-export class AppComponent  {
-  name = 'Angular';
-  show = true;
-  show2 = true;
-  show3 = true;
+export class AppComponent {
+    name = 'Angular';
+    show = true;
+    show2 = true;
+    show3 = true;
 }
